@@ -97,8 +97,8 @@ select {
   height: 550px;
   padding: 20px;
   margin: 0;
-  background: black;
-  background-image: url("../images/nasa.jpg");
+  background: rgb(7, 7, 7);
+  background-image: url("../images/nasa1.jpg");
   background-attachment: fixed;
   background-position: bottom center;
   background-size: cover;
@@ -187,7 +187,8 @@ select {
   }
 
   .hero h1 {
-    animation: smaller-title 1.2s forwards linear;
+    animation: smaller-title 3.0s forwards linear;
+
   }
 }
 
