@@ -24,34 +24,32 @@ var form = d3.select("#form");
 button.on("click", runEnter);
 form.on("submit", runEnter);
 
+d3.selectAll("input").on("change", runEnter);
+
+var data = {}
+
 // Complete the event handler function for the form
 function runEnter() {
-// 
+  // 
   // Prevent the page from refreshing
   d3.event.preventDefault();
 
   // Select the input element and get the raw HTML node
-  var inputElement = d3.select("#datetime");
-  var inputElement = d3.select("#City");
-  var inputElement = d3.select("#State");
-  var inputElement = d3.select("#Country");
-  var inputElement = d3.select("#Shape");
-
+  var inputElement = d3.select(this);
+  var inputID =  inputElement.attr("id")
+  console.log("id", inputElement.attr("id"))
+        
   // Get the value property of the input element
   var inputValue = inputElement.property("value");
-
-tbody.html("");
+ 
+  tbody.html("");
 
   console.log(inputValue);
   console.log(tableData);
-// 
-  
+  // 
+  data[inputID] = inputValue;
+  console.log("input data",data)
   var filteredData = tableData.filter(dates => dates.datetime === inputValue);
-  var filteredData = tableData.filter(City => City.City === inputValue);
-  var filteredData = tableData.filter(State => State.State === inputValue);
-  var filteredData = tableData.filter(Country => Country.Country === inputValue);
-  var filteredData = tableData.filter(Shape => Shape.Shape === inputValue);
-
 
 
 
